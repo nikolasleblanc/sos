@@ -1,0 +1,1523 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>SOS</title>
+		<meta name="viewport" content="width=device-width, user-scalable=no" />
+		<link rel="stylesheet" href="themes/sos.css" />
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.css">
+		<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+		<script src="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.js"></script>
+		<style>
+			@font-face {
+			    font-family: 'cabinmedium';
+			    src: url('fonts/cabin/cabin-medium-webfont.eot');
+			    src: url('fonts/cabin/cabin-medium-webfont.eot?#iefix') format('embedded-opentype'),
+			         url('fonts/cabin/cabin-medium-webfont.woff') format('woff'),
+			         url('fonts/cabin/cabin-medium-webfont.ttf') format('truetype'),
+			         url('fonts/cabin/cabin-medium-webfont.svg#cabinmedium') format('svg');
+			    font-weight: normal;
+			    font-style: normal;
+			}
+
+			@font-face {
+			    font-family: 'cabinregular';
+			    src: url('fonts/cabin/cabin-regular-webfont.eot');
+			    src: url('fonts/cabin/cabin-regular-webfont.eot?#iefix') format('embedded-opentype'),
+			         url('fonts/cabin/cabin-regular-webfont.woff') format('woff'),
+			         url('fonts/cabin/cabin-regular-webfont.ttf') format('truetype'),
+			         url('fonts/cabin/cabin-regular-webfont.svg#cabinregular') format('svg');
+			    font-weight: normal;
+			    font-style: normal;
+			}
+
+			@font-face {
+			    font-family: 'cabinbold';
+			    src: url('fonts/cabin/cabin-bold-webfont.eot');
+			    src: url('fonts/cabin/cabin-bold-webfont.eot?#iefix') format('embedded-opentype'),
+			         url('fonts/cabin/cabin-bold-webfont.woff') format('woff'),
+			         url('fonts/cabin/cabin-bold-webfont.ttf') format('truetype'),
+			         url('fonts/cabin/cabin-bold-webfont.svg#cabinbold') format('svg');
+			    font-weight: normal;
+			    font-style: normal;
+			}
+
+			h1.pageHeader { font-size: 1.4em; font-family: 'cabinbold'; color: #931A8D;}
+			h2.pageSubHeader { font-size: 1.1em; font-family: 'cabinbold'; color: #931A8D;}
+			h1, h2, h3, h4, p { text-align: center ;}
+			.callout { border: none; border-radius: 10px; background-color: #ECDBE6; padding: 10px; font-family: 'alegreyaregular';}
+			li h2, li p { text-align: left; }
+			.ui-li .ui-btn-text a.ui-link-inherit { /* This are the added classes from jQuery mobile */
+			    white-space: normal;                /* And this enables more than one line */
+			}
+			p { font-family: 'cabinregular';}
+			p.callout { font-family: 'cabinmedium';}
+			.ui-li-desc { white-space: normal; }
+			.ui-li-heading { color: #931A8D; white-space: normal; }
+			hr { margin-top: 15px;}
+			ul.steps li p { font-size: 0.9em; padding-top: 10px; line-height: 1.4em}
+		</style>
+	</head>
+	<body>
+		<div data-role="page" data-add-back-btn="true" id="begin">
+			<div data-role="header" data-theme="a" data-id="header" data-position="fixed">
+				<h1 class="header">SOS</h1>
+			</div>
+			
+			<div data-role="content">
+				<div style="text-align: center; margin-top: 5px"><img src="themes/images/header_e.gif" alt="SOS"/></div>
+				<h1 class="pageHeader">Choose your contraceptive</h1>
+				<p>Which method of contraception (birth control) do you use?</p>
+				<ul data-role="listview" data-inset="true">
+				    <li>
+				    	<a href="#pill">
+				    	<h2>Pill</h2>
+				    	<p>Combined oral contraceptive</p>
+				    </a>
+					</li>
+				    <li>
+				    	<a href="#mini">
+					    	<h2>Mini Pill</h2>
+					    	<p>Progestin only oral contraceptive</p>
+					    </a>
+					</li>
+				    <li>
+				    	<a href="#patch">
+					    	<h2>Patch</h2>
+					    	<p>Transdermal contraceptive patch</p>
+					    </a>
+					</li>
+				    <li>
+				    	<a href="#ring">
+				    		<h2>Ring</h2>
+				    		<p>Vaginal contraceptive ring</p>
+				    	</a>
+					</li>
+				    <li>
+				    	<a href="#shot">
+				    		<h2>Shot</h2>
+				    		<p>Injectable contraceptive</p>
+				    	</a>
+					</li>
+				</ul>
+			</div><!-- Footer -->
+		</div>
+
+		<!-- The Pill -->
+		<div data-role="page" data-add-back-btn="true" id="pill">
+			<div data-role="header" data-theme="a" data-id="header" data-position="fixed">
+				<h1 class="header">SOS</h1>
+				<a href="#begin" class="ui-btn-right" data-icon="home" data-iconpos="notext" data-direction="reverse">Home</a> 
+			</div>
+			
+			<div data-role="content">
+				<h1 class="pageHeader">The Pill</h1>
+				<p>During which week of your contraceptive cycle did you forget to take the pill?</p>
+				<ul data-role="listview" data-inset="true">
+				    <li>
+				    	<a href="#pillWeek1">
+				    		<h2>Week 1</h2>
+				    	</a>
+				    </li>
+				    <li>
+				    	<a href="#pillWeek2or3">
+				    		<h2>Week 2 or 3</h2>
+				    	</a>
+				    </li>
+				    <li>
+				    	<a href="#pillWeek4">
+				    		<h2>Week 4</h2>
+				    		<p>Placebo pills</p>
+				    	</a>
+				    </li>
+				</ul>
+			</div>
+		</div>
+		<div data-role="page" data-add-back-btn="true" id="pillWeek1">
+			<div data-role="header" data-theme="a" data-id="header" data-position="fixed">
+				<h1 class="header">SOS</h1>
+				<a href="#begin" class="ui-btn-right" data-icon="home" data-iconpos="notext" data-direction="reverse">Home</a> 
+			</div>
+			
+			<div data-role="content">
+				<h1 class="pageHeader">The Pill</h1>
+				<p>When did you take your last pill?</p>
+				<ul data-role="listview" data-inset="true">
+				    <li>
+				    	<a href="#pillWeek1LessThan48Hours">
+				    		<h2>Less than 48 hours ago?</h2>
+				    		<p>Did you take your pill less than 48 hours ago?</p>
+				    	</a>
+				    </li>
+				    <li>
+				    	<a href="#pillWeek1Over48HoursOrForgot">
+				    		<h2>Over 48 hours ago?</h2>
+				    		<p>Did you forget to take one or more of your pills, or take a pill over 48 hours ago?</p>
+				    	</a>
+				    </li>
+				</ul>
+			</div>
+			<!-- footer -->
+		</div>
+		<div data-role="page" data-add-back-btn="true" id="pillWeek1LessThan48Hours">
+			<div data-role="header" data-theme="a" data-id="header" data-position="fixed">
+				<h1 class="header">SOS</h1>
+				<a href="#begin" class="ui-btn-right" data-icon="home" data-iconpos="notext" data-direction="reverse">Home</a> 
+			</div>
+			
+			<div data-role="content">
+				<h1 class="pageHeader">The Pill</h1>
+				<p class="callout">You took a pill less than 48 hours ago. Your contraception should still be effective.</p>
+				<ul data-role="listview" data-inset="true" class="steps">
+					<li data-role="list-divider">Step 1</li>
+					<li>
+						<p>Take one active pill as soon as possible and continue taking one pill daily until the end of the pack.</p>
+					</li>
+					<li data-role="list-divider">Note</li>
+					<li class="note">
+						<p>The pill is most effective when it is taken at the same time every day. If you have trouble remembering to consistently take your pill, perhaps you should consider a different method of contraception.</p>
+					</li>
+				</ul>
+			</div>
+			<!-- footer -->
+		</div>		
+		<div data-role="page" data-add-back-btn="true" id="pillWeek1Over48HoursOrForgot">
+			<div data-role="header" data-theme="a" data-id="header" data-position="fixed">
+				<h1 class="header">SOS</h1>
+				<a href="#begin" class="ui-btn-right" data-icon="home" data-iconpos="notext" data-direction="reverse">Home</a> 
+			</div>
+			
+			<div data-role="content">
+				<h1 class="pageHeader">The Pill</h1>
+				<p class="callout">You forgot to take one or more of your pills, or took a pill over 48 hours ago.</p>
+				<ul data-role="listview" data-inset="true" class="steps">
+					<li data-role="list-divider">Step 1</li>
+					<li>
+						<p>Take one active pill as soon as possible and continue taking one pill daily until the end of the pack.</p>
+					</li>
+					<li data-role="list-divider">Step 2</li>
+					<li>
+						<p>If you had unprotected sexual intercourse in the last 5 days and are concerned about an unplanned pregnancy, emergency contracpetion ("the morning after pill" or IUD) is recommended and should be used as soon as possible.</p>
+						<p>If you wish to discuss your emergency contraception options, consult your local pharmacist, nurse, or physician.</p>
+						<p>Emergency contraception is effective for up to 5 days after unprotected sexual intercourse.</p>
+					</li>
+					<li data-role="list-divider">Step 3</li>
+					<li>
+						<p>You should also use back-up contraception, such as condoms, for the next 7 days.</p>
+					</li>
+					<li data-role="list-divider">Note</li>
+					<li class="note">
+						<p>The pill is most effective when it is taken at the same time every day. If you have trouble remembering to consistently take your pill, perhaps you should consider a different method of contraception.</p>
+					</li>
+				</ul>
+			</div>
+			<!-- footer -->
+		</div>
+		<div data-role="page" data-add-back-btn="true" id="pillWeek2or3">
+			<div data-role="header" data-theme="a" data-id="header" data-position="fixed">
+				<h1 class="header">SOS</h1>
+				<a href="#begin" class="ui-btn-right" data-icon="home" data-iconpos="notext" data-direction="reverse">Home</a> 
+			</div>
+			
+			<div data-role="content">
+				<h1 class="pageHeader">The Pill</h1>
+				<p>Which of these applies to you?</p>
+				<ul data-role="listview" data-inset="true">
+				    <li>
+				    	<a href="#pillWeek2or3LessThan48Hours">
+				    		<h2>Less than 48 hours ago</h2>
+				    		<p>You took a pill less than 48 hours ago</p>
+				    	</a>
+				    </li>
+				    <li>
+				    	<a href="#pillWeek2or3ForgotOneOrTwo">
+				    		<h2>Forgot one or two</h2>
+				    		<p>You forgot to take one or two pills</p>
+				    	</a>
+				    </li>
+				    <li>
+				    	<a href="#pillWeek2or3ForgotThreeOrMore">
+				    		<h2>Forgot three or more</h2>
+				    		<p>You forgot to take three or more pills</p>
+				    	</a>
+				    </li>
+				</ul>
+			</div>
+			<!-- footer -->
+		</div>
+		<div data-role="page" data-add-back-btn="true" id="pillWeek2or3LessThan48Hours">
+			<div data-role="header" data-theme="a" data-id="header" data-position="fixed">
+				<h1 class="header">SOS</h1>
+				<a href="#begin" class="ui-btn-right" data-icon="home" data-iconpos="notext" data-direction="reverse">Home</a> 
+			</div>
+			
+			<div data-role="content">
+				<h1 class="pageHeader">The Pill</h1>
+				<p class="callout">You took a pill less than 48 hours ago. Your contraception should still be effective.</p>
+				<ul data-role="listview" data-inset="true" class="steps">
+					<li data-role="list-divider">Step 1</li>
+					<li>
+						<p>Take one active pill as soon as possible and continue taking one pill daily until the end of the pack.</p>
+					</li>
+					<li data-role="list-divider">Note</li>
+					<li class="note">
+						<p>The pill is most effective when it is taken at the same time every day. If you have trouble remembering to consistently take your pill, perhaps you should consider a different method of contraception.</p>
+					</li>
+				</ul>
+			</div>
+			<!-- footer -->
+		</div>		
+		<div data-role="page" data-add-back-btn="true" id="pillWeek2or3ForgotOneOrTwo">
+			<div data-role="header" data-theme="a" data-id="header" data-position="fixed">
+				<h1 class="header">SOS</h1>
+				<a href="#begin" class="ui-btn-right" data-icon="home" data-iconpos="notext" data-direction="reverse">Home</a> 
+			</div>
+			
+			<div data-role="content">
+				<h1 class="pageHeader">The Pill</h1>
+				<p class="callout">You forgot to take one or two pills.</p>
+				<ul data-role="listview" data-inset="true" class="steps">
+					<li data-role="list-divider">Step 1</li>
+					<li>
+						<p>Take one active pill as soon as possible and continue taking one pill daily until the end of week 3.</p>
+					</li>
+					<li data-role="list-divider">Step 2</li>
+					<li>
+						<p>Disregard week four placebo (coloured non-medicinal) pills found only in the 28-pack of pills. Do not wait a week. Begin a NEW contraceptive cycle with a NEW pack of pills immediately.</p>
+					</li>
+					<li data-role="list-divider">Note</li>
+					<li class="note">
+						<p>The pill is most effective when it is taken at the same time every day. If you have trouble remembering to consistently take your pill, perhaps you should consider a different method of contraception.</p>
+					</li>
+				</ul>
+			</div>
+			<!-- footer -->
+		</div>		
+		<div data-role="page" data-add-back-btn="true" id="pillWeek2or3ForgotThreeOrMore">
+			<div data-role="header" data-theme="a" data-id="header" data-position="fixed">
+				<h1 class="header">SOS</h1>
+				<a href="#begin" class="ui-btn-right" data-icon="home" data-iconpos="notext" data-direction="reverse">Home</a> 
+			</div>
+			
+			<div data-role="content">
+				<h1 class="pageHeader">The Pill</h1>
+				<p class="callout">You forgot to take three or more pills</p>
+				<ul data-role="listview" data-inset="true" class="steps">
+					<li data-role="list-divider">Step 1</li>
+					<li>
+						<p>Take one active pill as soon as possible and continue taking one pill daily until the end of week three.</p>
+					</li>
+					<li data-role="list-divider">Step 2</li>
+					<li>
+						<p>Disregard week four placebo (coloured non-medicinal) pills found only in the 28-pack of pills. Do not wait a week. Begin a NEW contraceptive cycle with a NEW pack of pills immediately.</p>
+					</li>
+					<li data-role="list-divider">Step 3</li>
+					<li>
+						<p>If you had unprotected sexual intercourse in the last 5 days and are conerned about an unplanned pregnancy, emergency contraception ("the morning after pill" or IUD) is recommended and should be used as soon as possible.</p>
+						<p>If you wish to discuss your emergency contraception options, consult your local pharmacist, nurse, or physician.</p>
+						<p>Emergency contraception is effective for up to 5 days after unprotected sexual intercourse.</p>
+					</li>
+					<li data-role="list-divider">Step 4</li>
+					<li>
+						<p>You should also use back-up contraception, such as condoms, for the next 7 days.</p>
+					</li>
+					<li data-role="list-divider">Note</li>
+					<li class="note">
+						<p>The pill is most effective when it is taken at the same time every day. If you have trouble remembering to consistently take your pill, perhaps you should consider a different method of contraception.</p>
+					</li>
+				</ul>	
+			</div>
+			<!-- footer -->
+		</div>
+		<div data-role="page" data-add-back-btn="true" id="pillWeek4">
+			<div data-role="header" data-theme="a" data-id="header" data-position="fixed">
+				<h1 class="header">SOS</h1>
+				<a href="#begin" class="ui-btn-right" data-icon="home" data-iconpos="notext" data-direction="reverse">Home</a> 
+			</div>
+			
+			<div data-role="content">
+				<h1 class="pageHeader">The Pill</h1>
+				<p class="callout">Your contraception should still be effective.</p>
+				<ul data-role="listview" data-inset="true" class="steps">
+					<li data-role="list-divider">Step 1</li>
+					<li>
+						<p>Any pills provided in the fourth week are placebo (coloured non-medicinal) pills meant to help you maintain a routine.</p>
+						<p>Discard the missed pill and continue your contraceptive cycle as normal.</p>
+					</li>
+					<li data-role="list-divider">Note</li>
+					<li class="note">
+						<p>The pill is most effective when it is taken at the same time every day. If you have trouble remembering to consistently take your pill, perhaps you should consider a different method of contraception.</p>
+					</li>
+				</ul>				
+			</div>
+			<!-- footer -->
+		</div>		
+		<!-- /The Pill -->
+
+		<!-- The Mini Pill -->
+		<div data-role="page" data-add-back-btn="true" id="mini">
+			<div data-role="header" data-theme="a" data-id="header" data-position="fixed">
+				<h1 class="header">SOS</h1>
+				<a href="#begin" class="ui-btn-right" data-icon="home" data-iconpos="notext" data-direction="reverse">Home</a> 
+			</div>
+			
+			<div data-role="content">
+				<h1 class="pageHeader">The Mini Pill</h1>
+				<p>Have you had unprotected sex in the past 5 days?</p>
+				<ul data-role="listview" data-inset="true">
+				    <li>
+				    	<a href="#miniYes">
+				    		<h2>Yes</h2>
+				    	</a>
+				    </li>
+				    <li>
+				    	<a href="#miniNo">
+				    		<h2>No</h2>
+				    	</a>
+				    </li>
+				</ul>	
+				<ul data-role="listview" data-inset="true" class="steps">
+					<li data-role="list-divider">Note</li>
+					<li class="note">
+						<p>Regardless of the week of your contraceptive cycle, it is problematic if you forgot one or more mini-pills or you took your mini-pill more than 3 hours late.</p>
+						<p>The mini-pill is most effective when it is taken at the exact same time every day. If you have trouble remembering to consistently take your pill, perhaps you should consider a different method of contraception.</p>
+					</li>	
+				</ul>
+			</div>
+			<!-- footer -->
+		</div>
+		<div data-role="page" data-add-back-btn="true" id="miniYes">
+			<div data-role="header" data-theme="a" data-id="header" data-position="fixed">
+				<h1 class="header">SOS</h1>
+				<a href="#begin" class="ui-btn-right" data-icon="home" data-iconpos="notext" data-direction="reverse">Home</a> 
+			</div>
+			
+			<div data-role="content">
+				<h1 class="pageHeader">The Mini Pill</h1>
+				<p class="callout">You've had unprotected sex in the past 5 days</p>					
+				<ul data-role="listview" data-inset="true" class="steps">
+					<li data-role="list-divider">Step 1</li>
+					<li>
+						<p>Take one pill the next day and continue taking one pill daily at the same hour.</p>
+					</li>
+					<li data-role="list-divider">Step 2</li>
+					<li>
+						<p>If you had unprotected sexual intercourse in the last 5 days and are conerned about an unplanned pregnancy, emergency contracpetion ("the morning after pill" or IUD) is recommended and should be used as soon as possible.</p>
+						<p>If you wish to discuss your emergency contraception options, consult your local pharmacist, nurse, or physician.</p>
+						<p>Emergency contraception is effective for up to 5 days after unprotected sexual intercourse.</p>
+					</li>
+					<li data-role="list-divider">Step 3</li>
+					<li>
+						<p>You should also use back-up contraception, such as condoms, for the next 48 hours.</p>
+					</li>
+				</ul>
+			</div>
+			<!-- footer -->
+		</div>
+		<div data-role="page" data-add-back-btn="true" id="miniNo">
+			<div data-role="header" data-theme="a" data-id="header" data-position="fixed">
+				<h1 class="header">SOS</h1>
+				<a href="#begin" class="ui-btn-right" data-icon="home" data-iconpos="notext" data-direction="reverse">Home</a> 
+			</div>
+			
+			<div data-role="content">
+				<h1 class="pageHeader">The Mini Pill</h1>
+				<p class="callout">You have not had unprotected sex in the past 5 days</p>
+				<ul data-role="listview" data-inset="true" class="steps">
+					<li data-role="list-divider">Step 1</li>
+					<li>
+						<p>Take one pill the next day and continue taking one pill daily at the same hour.</p>
+					</li>
+					<li data-role="list-divider">Step 2</li>
+					<li>
+						<p>You should also use back-up contraception, such as condoms, for the next 48 hours.</p>
+					</li>
+				</ul>
+			</div>
+			<!-- footer -->
+		</div>
+		<!-- /Mini -->
+
+		<!-- The Patch -->
+		<div data-role="page" data-add-back-btn="true" id="patch">
+			<div data-role="header" data-theme="a" data-id="header" data-position="fixed">
+				<h1 class="header">SOS</h1>
+				<a href="#begin" class="ui-btn-right" data-icon="home" data-iconpos="notext" data-direction="reverse">Home</a> 
+			</div>
+			
+			<div data-role="content">
+				<h1 class="pageHeader">The Patch</h1>
+				<p>During which week of your contraception cycle was the patch forgotten, detached, or removed early?</p>
+				<ul data-role="listview" data-inset="true">
+				    <li>
+				    	<a href="#patchWeek1">
+				    		<h2>Week 1</h2>
+				    	</a>
+				    </li>
+				    <li>
+				    	<a href="#patchWeek2Or3">
+				    		<h2>Week 2 or 3</h2>
+				    	</a>
+				    </li>
+				    <li>
+				    	<a href="#patchLonger">
+				    		<h2>Does not apply</h2>
+				    		<p>Patch was worn longer than scheduled</p>
+				    	</a>
+				    </li>
+				</ul>
+			</div>
+			<!-- footer -->
+		</div>
+		<!-- Patch:Week1 -->
+		<div data-role="page" data-add-back-btn="true" id="patchWeek1">
+			<div data-role="header" data-theme="a" data-id="header" data-position="fixed">
+				<h1 class="header">SOS</h1>
+				<a href="#begin" class="ui-btn-right" data-icon="home" data-iconpos="notext" data-direction="reverse">Home</a> 
+			</div>
+			
+			<div data-role="content">
+				<h1 class="pageHeader">The Patch</h1>
+				<p>For how long was the patch forgotten, detached, or removed early?</p>				
+				<ul data-role="listview" data-inset="true">
+				    <li>
+				    	<a href="#patchWeek1LessThan24">
+				    		<h2>Less Than 24 hours</h2>
+				    	</a>
+				    </li>
+				    <li>
+				    	<a href="#patchWeek1MoreThan">
+				    		<h2>24 hours or more</h2>
+				    	</a>
+				    </li>
+				    <li>
+				    	<a href="#patchWeek1Unsure">
+				    		<h2>Unsure how long</h2>
+				    	</a>
+				    </li>
+				</ul>
+			</div>
+			<!-- footer -->
+		</div>		
+		<div data-role="page" data-add-back-btn="true" id="patchWeek1Unsure">
+			<div data-role="header" data-theme="a" data-id="header" data-position="fixed">
+				<h1 class="header">SOS</h1>
+				<a href="#begin" class="ui-btn-right" data-icon="home" data-iconpos="notext" data-direction="reverse">Home</a> 
+			</div>
+			
+			<div data-role="content">
+				<h1 class="pageHeader">The Patch</h1>
+				<p class="callout">Unsure how long</p>				
+				<ul data-role="listview" data-inset="true" class="steps">
+					<li data-role="list-divider">Step 1</li>
+					<li>
+						<p>Apply a NEW patch as soon as possible. Keep the same patch change day, and continue the cycle of three patches.</p>	
+					</li>
+					<li data-role="list-divider">Step 2</li>
+					<li>
+						<p>If you had unprotected sexual intercourse in the last 5 days and are conerned about an unplanned pregnancy, emergency contracpetion ("the morning after pill" or IUD) is recommended and should be used as soon as possible.</p>
+						<p>If you wish to discuss your emergency contraception options, consult your local pharmacist, nurse, or physician.</p>
+						<p>Emergency contraception is effective for up to 5 days after unprotected sexual intercourse.</p>
+					</li>
+					<li data-role="list-divider">Step 3</li>
+					<li>
+						<p>You should also use back-up contraception, such as condoms, for the next 7 days.</p>
+					</li>
+					<li data-role="list-divider">Note</li>
+					<li>
+						<p>The patch is most effective when it is applied every week, on the same day. If you have trouble remembering to consistently apply your NEW patch, perhaps you should consider a different method of contraception.</p>
+					</li>
+				</ul>
+			</div>
+			<!-- footer -->
+		</div>	
+		<div data-role="page" data-add-back-btn="true" id="patchWeek1MoreThan">
+			<div data-role="header" data-theme="a" data-id="header" data-position="fixed">
+				<h1 class="header">SOS</h1>
+				<a href="#begin" class="ui-btn-right" data-icon="home" data-iconpos="notext" data-direction="reverse">Home</a> 
+			</div>
+			
+			<div data-role="content">
+				<h1 class="pageHeader">The Patch</h1>
+				<p class="callout">24 hours or more</p>				
+				<ul data-role="listview" data-inset="true" class="steps">
+					<li data-role="list-divider">Step 1</li>
+					<li>
+						<p>Apply a NEW patch as soon as possible. Keep the same patch change day, and continue the cycle of three patches.</p>	
+					</li>
+					<li data-role="list-divider">Step 2</li>
+					<li>
+						<p>If you had unprotected sexual intercourse in the last 5 days and are conerned about an unplanned pregnancy, emergency contracpetion ("the morning after pill" or IUD) is recommended and should be used as soon as possible.</p>
+						<p>If you wish to discuss your emergency contraception options, consult your local pharmacist, nurse, or physician.</p>
+						<p>Emergency contraception is effective for up to 5 days after unprotected sexual intercourse.</p>
+					</li>
+					<li data-role="list-divider">Step 3</li>
+					<li>
+						<p>You should also use back-up contraception, such as condoms, for the next 7 days.</p>
+					</li>
+					<li data-role="list-divider">Note</li>
+					<li class="note">
+						<p>The patch is most effective when it is applied every week, on the same day. If you have trouble remembering to consistently apply your NEW patch, perhaps you should consider a different method of contraception.</p>
+					</li>
+				</ul>
+			</div>
+			<!-- footer -->
+		</div>		
+		<div data-role="page" data-add-back-btn="true" id="patchWeek1LessThan24">
+			<div data-role="header" data-theme="a" data-id="header" data-position="fixed">
+				<h1 class="header">SOS</h1>
+				<a href="#begin" class="ui-btn-right" data-icon="home" data-iconpos="notext" data-direction="reverse">Home</a> 
+			</div>
+			
+			<div data-role="content">
+				<h1 class="pageHeader">The Patch</h1>
+				<p class="callout">Less than 24 hours. Your contraception should still be effective.</p>				
+				<ul data-role="listview" data-inset="true" class="steps">
+					<li data-role="list-divider">Step 1</li>
+					<li>
+						<p>Reapply the same patch or replace with a NEW patch as soon as possible. Keep the same patch change day, and continue the cycle of three patches.</p>
+					</li>
+					<li data-role="list-divider">Note</li>
+					<li class="note">
+						<p>The patch is most effective when it is applied every week, on the same day. If you have trouble remembering to consistently apply your NEW patch, perhaps you should consider a different method of contraception.</p>
+					</li>
+				</ul>
+			</div>
+			<!-- footer -->
+		</div>
+		<!-- /Patch:Week1 -->
+		<!-- Patch:Week2 -->
+		<div data-role="page" data-add-back-btn="true" id="patchWeek2Or3">
+			<div data-role="header" data-theme="a" data-id="header" data-position="fixed">
+				<h1 class="header">SOS</h1>
+				<a href="#begin" class="ui-btn-right" data-icon="home" data-iconpos="notext" data-direction="reverse">Home</a> 
+			</div>
+			
+			<div data-role="content">
+				<h1 class="pageHeader">The Patch</h1>
+				<p>For how long was the patch forgotten, detached, or removed early?</p>				
+				<ul data-role="listview" data-inset="true">
+				    <li>
+				    	<a href="#patchWeek2LessThan24">
+				    		<h2>Less Than 24 hours</h2>
+				    	</a>
+				    </li>
+				    <li>
+				    	<a href="#patchWeek2Between">
+				    		<h2>Between 24 and 72 hours</h2>
+				    	</a>
+				    </li>
+				    <li>
+				    	<a href="#patchWeek2MoreThan72">
+				    		<h2>72 hours or more</h2>
+				    	</a>
+				    </li>
+				    <li>
+				    	<a href="#patchWeek2Unsure">
+				    		<h2>Unsure how long</h2>
+				    	</a>
+				    </li>
+				</ul>
+			</div>
+			<!-- footer -->
+		</div>		
+		<div data-role="page" data-add-back-btn="true" id="patchWeek2LessThan24">
+			<div data-role="header" data-theme="a" data-id="header" data-position="fixed">
+				<h1 class="header">SOS</h1>
+				<a href="#begin" class="ui-btn-right" data-icon="home" data-iconpos="notext" data-direction="reverse">Home</a> 
+			</div>
+			
+			<div data-role="content">
+				<h1 class="pageHeader">The Patch</h1>
+				<p class="callout">Less than 24 hours. Your contraception should still be effective.</p>
+				<ul data-role="listview" data-inset="true" class="steps">
+					<li data-role="list-divider">Step 1</li>
+					<li>
+						<p>Reapply the same patch or replace with a NEW patch as soon as possible. Keep the same patch change day, and continue the cycle of three patches.</p>
+					</li>
+					<li data-role="list-divider">Note</li>
+					<li class="note">
+						<p>The patch is most effective when it is applied every week, on the same day. If you have trouble remembering to consistently apply your NEW patch, perhaps you should consider a different method of contraception.</p>
+					</li>
+				</ul>
+			</div>
+			<!-- footer -->
+		</div>	
+		<div data-role="page" data-add-back-btn="true" id="patchWeek2Between">
+			<div data-role="header" data-theme="a" data-id="header" data-position="fixed">
+				<h1 class="header">SOS</h1>
+				<a href="#begin" class="ui-btn-right" data-icon="home" data-iconpos="notext" data-direction="reverse">Home</a> 
+			</div>
+			
+			<div data-role="content">
+				<h1 class="pageHeader">The Patch</h1>
+				<p class="callout">Between 24 and 72 hours</p>				
+				<ul data-role="listview" data-inset="true" class="steps">
+					<li data-role="list-divider">Step 1</li>
+					<li>
+						<p>Apply a NEW patch as soon as possible. Keep the same patch change day, and continue the cycle of three patches.</p>
+					</li>
+					<li data-role="list-divider">Step 2</li>
+					<li>
+						<p>Begin a NEW contraceptive cycle of three patches immediately.</p>
+					</li>
+					<li data-role="list-divider">Step 3</li>
+					<li>
+						<p>Do not go a week without a patch as normally scheduled.</p>
+					</li>
+					<li data-role="list-divider">Note</li>
+					<li class="note">
+						<p>The patch is most effective when it is applied every week, on the same day. If you have trouble remembering to consistently apply your NEW patch, perhaps you should consider a different method of contraception.</p>
+					</li>
+				</ul>
+			</div>
+			<!-- footer -->
+		</div>	
+		<div data-role="page" data-add-back-btn="true" id="patchWeek2MoreThan72">
+			<div data-role="header" data-theme="a" data-id="header" data-position="fixed">
+				<h1 class="header">SOS</h1>
+				<a href="#begin" class="ui-btn-right" data-icon="home" data-iconpos="notext" data-direction="reverse">Home</a> 
+			</div>
+			
+			<div data-role="content">
+				<h1 class="pageHeader">The Patch</h1>
+				<p class="callout">72 hours or more</p>				
+				<ul data-role="listview" data-inset="true" class="steps">
+					<li data-role="list-divider">Step 1</li>
+					<li>
+						<p>Apply a NEW patch as soon as possible. Keep the same patch change day, and continue the cycle of three patches.</p>
+					</li>
+					<li data-role="list-divider">Step 2</li>
+					<li>
+						<p>If you had unprotected sexual intercourse in the last 5 days and are conerned about an unplanned pregnancy, emergency contracpetion ("the morning after pill" or IUD) is recommended and should be used as soon as possible.</p>
+						<p>If you wish to discuss your emergency contraception options, consult your local pharmacist, nurse, or physician.</p>
+						<p>Emergency contraception is effective for up to 5 days after unprotected sexual intercourse.</p>
+					</li>
+					<li data-role="list-divider">Step 3</li>
+					<li>
+						<p>You should also use back-up contraception, such as condoms, for the next 7 days.</p>
+					</li>
+					<li data-role="list-divider">Note</li>
+					<li class="note">
+						<p>The patch is most effective when it is applied every week, on the same day. If you have trouble remembering to consistently apply your NEW patch, perhaps you should consider a different method of contraception.</p>
+					</li>
+				</ul>
+			</div>
+			<!-- footer -->
+		</div>		
+		<div data-role="page" data-add-back-btn="true" id="patchWeek2Unsure">
+			<div data-role="header" data-theme="a" data-id="header" data-position="fixed">
+				<h1 class="header">SOS</h1>
+				<a href="#begin" class="ui-btn-right" data-icon="home" data-iconpos="notext" data-direction="reverse">Home</a> 
+			</div>
+			
+			<div data-role="content">
+				<h1 class="pageHeader">The Patch</h1>
+				<p class="callout">Unsure how long</p>				
+				
+				<ul data-role="listview" data-inset="true" class="steps">
+					<li data-role="list-divider">Step 1</li>
+					<li>
+						<p>Apply a NEW patch as soon as possible. Keep the same patch change day, and continue the cycle of three patches.</p>
+					</li>
+					<li data-role="list-divider">Step 2</li>
+					<li>
+						<p>If you had unprotected sexual intercourse in the last 5 days and are conerned about an unplanned pregnancy, emergency contracpetion ("the morning after pill" or IUD) is recommended and should be used as soon as possible.</p>
+						<p>If you wish to discuss your emergency contraception options, consult your local pharmacist, nurse, or physician.</p>
+						<p>Emergency contraception is effective for up to 5 days after unprotected sexual intercourse.</p>
+					</li>
+					<li data-role="list-divider">Step 3</li>
+					<li>
+						<p>You should also use back-up contraception, such as condoms, for the next 7 days.</p>
+					</li>
+					<li data-role="list-divider">Note</li>
+					<li class="note">
+						<p>The patch is most effective when it is applied every week, on the same day. If you have trouble remembering to consistently apply your NEW patch, perhaps you should consider a different method of contraception.</p>
+					</li>
+				</ul>
+			</div>
+			<!-- footer -->
+		</div>	
+		<!-- /Patch:Week2 -->
+		<!-- Patch:Longer -->
+		<div data-role="page" data-add-back-btn="true" id="patchLonger">
+			<div data-role="header" data-theme="a" data-id="header" data-position="fixed">
+				<h1 class="header">SOS</h1>
+				<a href="#begin" class="ui-btn-right" data-icon="home" data-iconpos="notext" data-direction="reverse">Home</a> 
+			</div>
+			
+			<div data-role="content">
+				<h1 class="pageHeader">The Patch</h1>
+				<p class="callout">During which week of your contraception cycle was the patch worn longer than scheduled?</p>
+				<ul data-role="listview" data-inset="true">
+				    <li>
+				    	<a href="#patchLongerWeek1Or2">
+				    		<h2>Week 1 or 2</h2>
+				    	</a>
+					</li>
+				    <li>
+				    	<a href="#patchLongerWeek3">
+				    		<h2>Week 3</h2>
+				    	</a>
+				    </li>
+				</ul>
+			</div>
+			<!-- footer -->
+		</div>		
+		<div data-role="page" data-add-back-btn="true" id="patchLongerWeek1Or2">
+			<div data-role="header" data-theme="a" data-id="header" data-position="fixed">
+				<h1 class="header">SOS</h1>
+				<a href="#begin" class="ui-btn-right" data-icon="home" data-iconpos="notext" data-direction="reverse">Home</a> 
+			</div>
+			
+			<div data-role="content">
+				<h1 class="pageHeader">The Patch</h1>
+				<p class="callout">For how long was the patch worn?</p>
+				<ul data-role="listview" data-inset="true">
+				    <li>
+				    	<a href="#patchLongerWeek1Or27to8">
+				    		<h2>7 to 8 days</h2>
+				    	</a>
+				    </li>
+				    <li>
+				    	<a href="#patchLongerWeek1Or29to11">
+				    		<h2>9 to 11 days</h2>
+				    	</a>
+				    </li>
+				    <li>
+				    	<a href="#patchLongerWeek1Or212orMore">
+				    		<h2>12 or more days</h2>
+				    	</a>
+				    </li>
+				</ul>
+			</div>
+			<!-- footer -->
+		</div>				
+		<div data-role="page" data-add-back-btn="true" id="patchLongerWeek1Or27to8">
+			<div data-role="header" data-theme="a" data-id="header" data-position="fixed">
+				<h1 class="header">SOS</h1>
+				<a href="#begin" class="ui-btn-right" data-icon="home" data-iconpos="notext" data-direction="reverse">Home</a> 
+			</div>
+			
+			<div data-role="content">
+				<h1 class="pageHeader">The Patch</h1>
+				<p class="callout">7 to 8 days. Your contraception should still be effective. So long as the patch remained in place, there is a 2 day grace period.</p>
+				<ul data-role="listview" data-inset="true" class="steps">
+					<li data-role="list-divider">Step 1</li>
+					<li>
+						<p>Apply a NEW patch as soon as possible.</p>
+					</li>
+					<li data-role="list-divider">Step 2</li>
+					<li>
+						<p>Keep the same patch change day and finish the cycle of patches as scheduled.</p>
+					</li>
+					<li data-role="list-divider">Note</li>
+					<li class="note">
+						<p>The patch is most effective when it is applied every week, on the same day. If you have trouble remembering to consistently apply your NEW patch, perhaps you should consider a different method of contraception.</p>
+					</li>
+				</ul>
+			</div>
+			<!-- footer -->
+		</div>				
+		<div data-role="page" data-add-back-btn="true" id="patchLongerWeek1Or29to11">
+			<div data-role="header" data-theme="a" data-id="header" data-position="fixed">
+				<h1 class="header">SOS</h1>
+				<a href="#begin" class="ui-btn-right" data-icon="home" data-iconpos="notext" data-direction="reverse">Home</a> 
+			</div>
+			
+			<div data-role="content">
+				<h1 class="pageHeader">The Patch</h1>
+				<p class="callout">9 to 11 days</p>
+				<ul data-role="listview" data-inset="true" class="steps">
+					<li data-role="list-divider">Step 1</li>
+					<li>
+						<p>Apply a NEW patch as soon as possible. Keep the same patch change day, and continue the cycle of three patches.</p>	
+					</li>
+					<li data-role="list-divider">Step 2</li>
+					<li>
+						<p>Begin a NEW contraceptive cycle of three patches immediately.</p>
+						<p>Do not go a week without a patch as normally scheduled.</p>
+					</li>
+					<li data-role="list-divider">Note</li>
+					<li class="note">
+						<p>The patch is most effective when it is applied every week, on the same day. If you have trouble remembering to consistently apply your NEW patch, perhaps you should consider a different method of contraception.</p>
+					</li>
+				</ul>
+			</div>
+			<!-- footer -->
+		</div>				
+		<div data-role="page" data-add-back-btn="true" id="patchLongerWeek1Or212orMore">
+			<div data-role="header" data-theme="a" data-id="header" data-position="fixed">
+				<h1 class="header">SOS</h1>
+				<a href="#begin" class="ui-btn-right" data-icon="home" data-iconpos="notext" data-direction="reverse">Home</a> 
+			</div>
+			
+			<div data-role="content">
+				<h1 class="pageHeader">The Patch</h1>
+				<p class="callout">12 days or more</p>
+				<ul data-role="listview" data-inset="true" class="steps">
+					<li data-role="list-divider">Step 1</li>
+					<li>
+						<p>Begin a NEW contraceptive cycle of three patches immediately. Do not go a week without a patch as normally scheduled.</p>	
+					</li>
+					<li data-role="list-divider">Step 2</li>
+					<li>
+						<p>If you had unprotected sexual intercourse in the last 5 days and are conerned about an unplanned pregnancy, emergency contracpetion ("the morning after pill" or IUD) is recommended and should be used as soon as possible.</p>
+						<p>If you wish to discuss your emergency contraception options, consult your local pharmacist, nurse, or physician.</p>
+						<p>Emergency contraception is effective for up to 5 days after unprotected sexual intercourse.</p>
+					</li>
+					<li data-role="list-divider">Step 3</li>
+					<li>
+						<p>You should also use back-up contraception, such as condoms, for the next 7 days.</p>
+					</li>
+					<li data-role="list-divider">Note</li>
+					<li class="note">
+						<p>The patch is most effective when it is applied every week, on the same day. If you have trouble remembering to consistently apply your NEW patch, perhaps you should consider a different method of contraception.</p>
+					</li>
+				</ul>
+			</div>
+			<!-- footer -->
+		</div>			
+		<div data-role="page" data-add-back-btn="true" id="patchLongerWeek3">
+			<div data-role="header" data-theme="a" data-id="header" data-position="fixed">
+				<h1 class="header">SOS</h1>
+				<a href="#begin" class="ui-btn-right" data-icon="home" data-iconpos="notext" data-direction="reverse">Home</a> 
+			</div>
+			
+			<div data-role="content">
+				<h1 class="pageHeader">The Patch</h1>
+				<p class="callout">Week 3</p>
+				<ul data-role="listview" data-inset="true" class="steps">
+					<li data-role="list-divider">Step 1</li>
+					<li>
+						<p>Unless you wore the patch more than a week longer than scheduled (past the start of a NEW cycle), your contraception should still be effective.</p>
+						<p>Keep the same patch change day and start a NEW contraceptive cycle of three patches as scheduled.</p>
+					</li>
+					<li data-role="list-divider">Note</li>
+					<li class="note">
+						<p>The patch is most effective when it is applied every week, on the same day. If you have trouble remembering to consistently apply your NEW patch, perhaps you should consider a different method of contraception.</p>
+					</li>
+				</ul>
+			</div>
+			<!-- footer -->
+		</div>	
+		<!-- /Patch -->
+		<!-- Ring -->					
+		<div data-role="page" data-add-back-btn="true" id="ring">
+			<div data-role="header" data-theme="a" data-id="header" data-position="fixed">
+				<h1 class="header">SOS</h1>
+				<a href="#begin" class="ui-btn-right" data-icon="home" data-iconpos="notext" data-direction="reverse">Home</a> 
+			</div>
+			
+			<div data-role="content">
+				<h1 class="pageHeader">The Ring</h1>
+				<p>During which week of your contraception cycle was the ring forgotten, expelled, or removed early?</p>
+				<ul data-role="listview" data-inset="true">
+				    <li>
+				    	<a href="#ringWeek1">
+				    		<h2>Week 1</h2>
+				    	</a>
+				    </li>
+				    <li>
+				    	<a href="#ringWeek2Or3">
+				    		<h2>Week 2 or 3</h2>
+				    	</a>
+				    </li>
+				    <li>
+				    	<a href="#ringLonger">
+				    		<h2>Ring was worn longer than scheduled</h2>
+				    	</a>
+				    </li>
+				</ul>
+			</div>
+			<!-- footer -->
+		</div>							
+		<div data-role="page" data-add-back-btn="true" id="ringWeek1">
+			<div data-role="header" data-theme="a" data-id="header" data-position="fixed">
+				<h1 class="header">SOS</h1>
+				<a href="#begin" class="ui-btn-right" data-icon="home" data-iconpos="notext" data-direction="reverse">Home</a> 
+			</div>
+			
+			<div data-role="content">
+				<h1 class="pageHeader">The Ring</h1>
+				<p>For how long was the ring forgotten, expelled, or removed early?</p>
+				<ul data-role="listview" data-inset="true">
+				    <li>
+				    	<a href="#ringWeek1LessThan">
+				    		<h2>Less than 3 hours</h2>
+				    	</a>
+				    </li>
+				    <li>
+				    	<a href="#ringWeek1MoreThan">
+				    		<h2>3 hours or more</h2>
+				    	</a>
+				    </li>
+				    <li>
+				    	<a href="#ringWeek1Unsure">
+				    		<h2>Unsure how long</h2>
+				    	</a>
+				    </li>
+				</ul>
+			</div>
+			<!-- footer -->
+		</div>							
+		<div data-role="page" data-add-back-btn="true" id="ringWeek1LessThan">
+			<div data-role="header" data-theme="a" data-id="header" data-position="fixed">
+				<h1 class="header">SOS</h1>
+				<a href="#begin" class="ui-btn-right" data-icon="home" data-iconpos="notext" data-direction="reverse">Home</a> 
+			</div>
+			
+			<div data-role="content">
+				<h1 class="pageHeader">The Ring</h1>
+				<p class="callout">Less than 3 hours. Your contraception should still be effective</p>
+				<ul data-role="listview" data-inset="true" class="steps">
+					<li data-role="list-divider">Step 1</li>
+					<li>
+						<p>Insert the ring as soon as possible and keep it in until the scheduled ring removal day.</p>
+					</li>
+					<li data-role="list-divider">Note</li>
+					<li class="note">
+						<p>The ring is most effective when a NEW ring is inserted every 4 weeks, on a regular schedule (with one ring-free week). If you have trouble remembering to consistently change your ring, perhaps you should consider a different method of contraception options that match your needs and lifestyle.</p>
+					</li>
+				</ul>
+			</div>
+			<!-- footer -->
+		</div>									
+		<div data-role="page" data-add-back-btn="true" id="ringWeek1MoreThan">
+			<div data-role="header" data-theme="a" data-id="header" data-position="fixed">
+				<h1 class="header">SOS</h1>
+				<a href="#begin" class="ui-btn-right" data-icon="home" data-iconpos="notext" data-direction="reverse">Home</a> 
+			</div>
+			
+			<div data-role="content">
+				<h1 class="pageHeader">The Ring</h1>
+				<p class="callout">3 hours or more</p>
+				<ul data-role="listview" data-inset="true" class="steps">
+					<li data-role="list-divider">Step 1</li>
+					<li>
+						<p>Insert the ring as soon as possible and keep it in until the scheduled ring removal day.</p>
+					</li>
+					<li data-role="list-divider">Step 2</li>
+					<li>
+						<p>If you had unprotected sexual intercourse in the last 5 days and are concerned about an unplanned pregnancy, emergency contraception ("the morning after pill" or IUD) is recommended and should be used as soon as possible.</p>
+						<p>If you wish to discuss your emergency contraception options, consult your local pharmacist, nurse, or physician.</p>
+						<p>Emergency contraception is effective for up to 5 days after unprotected sexual intercourse.</p>
+					</li>
+					<li data-role="list-divider">Step 3</li>
+					<li>
+						<p>You should also use back-up contraception, such as condoms, for the next 7 days.</p>
+					</li>
+					<li data-role="list-divider">Note</li>
+					<li class="note">
+						<p>The ring is most effective when a NEW ring is inserted every 4 weeks, on a regular schedule (with one ring-free week). If you have trouble remembering to consistently change your ring, perhaps you should consider a different method of contraception options that match your needs and lifestyle.</p>
+					</li>
+				</ul>
+			</div>
+			<!-- footer -->
+		</div>									
+		<div data-role="page" data-add-back-btn="true" id="ringWeek1Unsure">
+			<div data-role="header" data-theme="a" data-id="header" data-position="fixed">
+				<h1 class="header">SOS</h1>
+				<a href="#begin" class="ui-btn-right" data-icon="home" data-iconpos="notext" data-direction="reverse">Home</a> 
+			</div>
+			
+			<div data-role="content">
+				<h1 class="pageHeader">The Ring</h1>
+				<p class="callout">Unsure how long</p>
+				<ul data-role="listview" data-inset="true" class="steps">
+					<li data-role="list-divider">Step 1</li>
+					<li>
+						<p>Insert the ring as soon as possible and keep it in until the scheduled ring removal day.</p>
+					</li>
+					<li data-role="list-divider">Step 2</li>
+					<li>
+						<p>If you had unprotected sexual intercourse in the last 5 days and are concerned about an unplanned pregnancy, emergency contraception ("the morning after pill" or IUD) is recommended and should be used as soon as possible.</p>
+						<p>If you wish to discuss your emergency contraception options, consult your local pharmacist, nurse, or physician.</p>
+						<p>Emergency contraception is effective for up to 5 days after unprotected sexual intercourse.</p>
+					</li>
+					<li data-role="list-divider">Step 3</li>
+					<li>
+						<p>You should also use back-up contraception, such as condoms, for the next 7 days.</p>
+					</li>
+					<li data-role="list-divider">Note</li>
+					<li class="note">
+						<p>The ring is most effective when a NEW ring is inserted every 4 weeks, on a regular schedule (with one ring-free week). If you have trouble remembering to consistently change your ring, perhaps you should consider a different method of contraception options that match your needs and lifestyle.</p>
+					</li>
+				</ul>
+			</div>
+			<!-- footer -->
+		</div>									
+		<div data-role="page" data-add-back-btn="true" id="ringWeek2Or3">
+			<div data-role="header" data-theme="a" data-id="header" data-position="fixed">
+				<h1 class="header">SOS</h1>
+				<a href="#begin" class="ui-btn-right" data-icon="home" data-iconpos="notext" data-direction="reverse">Home</a> 
+			</div>
+			
+			<div data-role="content">
+				<h1 class="pageHeader">The Ring</h1>
+				<p>For how long was the ring forgotten, expelled, or removed early?</p>
+				<ul data-role="listview" data-inset="true">
+				    <li>
+				    	<a href="#ringWeek2Or3LessThan">
+				    		<h2>Less than 3 hours</h2>
+				    	</a>
+				    </li>
+				    <li>
+				    	<a href="#ringWeek2Or3Between">
+				    		<h2>Between 3 and 72 hours</h2>
+				    	</a>
+				    </li>
+				    <li>
+				    	<a href="#ringWeek2Or3MoreThan">
+				    		<h2>72 hours or more</h2>
+				    	</a>
+				    </li>
+				    <li>
+				    	<a href="#ringWeek2Or3Unsure">
+				    		<h2>Unsure how long was removed</h2>
+				    	</a>
+				    </li>
+				</ul>
+			</div>
+			<!-- footer -->
+		</div>							
+		<div data-role="page" data-add-back-btn="true" id="ringWeek2Or3LessThan">
+			<div data-role="header" data-theme="a" data-id="header" data-position="fixed">
+				<h1 class="header">SOS</h1>
+				<a href="#begin" class="ui-btn-right" data-icon="home" data-iconpos="notext" data-direction="reverse">Home</a> 
+			</div>
+			
+			<div data-role="content">
+				<h1 class="pageHeader">The Ring</h1>
+				<p class="callout">Less than 3 hours. Your contraception should still be effective.</p>
+				<ul data-role="listview" data-inset="true" class="steps">
+					<li data-role="list-divider">Step 1</li>
+					<li>
+						<p>Insert the ring as soon as possible and keep it in until the scheduled ring removal day.</p>
+					</li>
+					<li data-role="list-divider">Note</li>
+					<li class="note">
+						<p>The ring is most effective when a NEW ring is inserted every 4 weeks, on a regular schedule (with one ring-free week). If you have trouble remembering to consistently change your ring, perhaps you should consider a different method of contraception options that match your needs and lifestyle.</p>
+					</li>
+				</ul>
+			</div>
+			<!-- footer -->
+		</div>							
+		<div data-role="page" data-add-back-btn="true" id="ringWeek2Or3Between">
+			<div data-role="header" data-theme="a" data-id="header" data-position="fixed">
+				<h1 class="header">SOS</h1>
+				<a href="#begin" class="ui-btn-right" data-icon="home" data-iconpos="notext" data-direction="reverse">Home</a> 
+			</div>
+			
+			<div data-role="content">
+				<h1 class="pageHeader">The Ring</h1>
+				<p class="callout">Between 3 and 72 hours</p>
+				<ul data-role="listview" data-inset="true" class="steps">
+					<li data-role="list-divider">Step 1</li>
+					<li>
+						<p>Insert the ring as soon as possible and keep it in until the scheduled ring removal day.</p>
+						<p>Begin a NEW contraceptive cycle with a NEW ring immediately.</p>
+						<p>Do not go a week without a ring as normally scheduled.</p>
+					</li>
+					<li data-role="list-divider">Note</li>
+					<li class="note">
+						<p>The ring is most effective when a NEW ring is inserted every 4 weeks, on a regular schedule (with one ring-free week). If you have trouble remembering to consistently change your ring, perhaps you should consider a different method of contraception options that match your needs and lifestyle.</p>
+					</li>
+				</ul>
+			</div>
+			<!-- footer -->
+		</div>									
+		<div data-role="page" data-add-back-btn="true" id="ringWeek2Or3MoreThan">
+			<div data-role="header" data-theme="a" data-id="header" data-position="fixed">
+				<h1 class="header">SOS</h1>
+				<a href="#begin" class="ui-btn-right" data-icon="home" data-iconpos="notext" data-direction="reverse">Home</a> 
+			</div>
+			
+			<div data-role="content">
+				<h1 class="pageHeader">The Ring</h1>
+				<p class="callout">72 hours or more</p>
+				<ul data-role="listview" data-inset="true" class="steps">
+					<li data-role="list-divider">Step 1</li>
+					<li>
+						<p>Insert the ring as soon as possible and keep it in until the scheduled ring removal day.</p>
+						<p>Begin a NEW contraceptive cycle with a NEW ring immediately.</p>
+						<p>Do not go a week without a ring as normally scheduled.</p>
+					</li>
+					<li data-role="list-divider">Step 2</li>
+					<li>
+						<p>If you had unprotected sexual intercourse in the last 5 days and are concerned about an unplanned pregnancy, emergency contraception ("the morning after pill" or IUD) is recommended and should be used as soon as possible.</p>
+						<p>If you wish to discuss your emergency contraception options, consult your local pharmacist, nurse, or physician.</p>
+						<p>Emergency contraception is effective for up to 5 days after unprotected sexual intercourse.</p>
+					</li>
+					<li data-role="list-divider">Step 3</li>
+					<li>
+						<p>You should also use back-up contraception, such as condoms, for the next 7 days.</p>
+					</li>
+					<li data-role="list-divider">Note</li>
+					<li class="note">
+						<p>The ring is most effective when a NEW ring is inserted every 4 weeks, on a regular schedule (with one ring-free week). If you have trouble remembering to consistently change your ring, perhaps you should consider a different method of contraception options that match your needs and lifestyle.</p>
+					</li>
+				</ul>
+			</div>
+			<!-- footer -->
+		</div>									
+		<div data-role="page" data-add-back-btn="true" id="ringWeek2Or3Unsure">
+			<div data-role="header" data-theme="a" data-id="header" data-position="fixed">
+				<h1 class="header">SOS</h1>
+				<a href="#begin" class="ui-btn-right" data-icon="home" data-iconpos="notext" data-direction="reverse">Home</a> 
+			</div>
+			
+			<div data-role="content">
+				<h1 class="pageHeader">The Ring</h1>
+				<p class="callout">Unsure how long ring was removed</p>
+				<ul data-role="listview" data-inset="true" class="steps">
+					<li data-role="list-divider">Step 1</li>
+					<li>
+						<p>Insert the ring as soon as possible and keep it in until the scheduled ring removal day.</p>
+					</li>
+					<li data-role="list-divider">Step 2</li>
+					<li>
+						<p>If you had unprotected sexual intercourse in the last 5 days and are concerned about an unplanned pregnancy, emergency contraception ("the morning after pill" or IUD) is recommended and should be used as soon as possible.</p>
+						<p>If you wish to discuss your emergency contraception options, consult your local pharmacist, nurse, or physician.</p>
+						<p>Emergency contraception is effective for up to 5 days after unprotected sexual intercourse.</p>
+					</li>
+					<li data-role="list-divider">Step 3</li>
+					<li>
+						<p>You should also use back-up contraception, such as condoms, for the next 7 days.</p>
+					</li>
+					<li data-role="list-divider">Note</li>
+					<li class="note">
+						<p>The ring is most effective when a NEW ring is inserted every 4 weeks, on a regular schedule (with one ring-free week). If you have trouble remembering to consistently change your ring, perhaps you should consider a different method of contraception options that match your needs and lifestyle.</p>
+					</li>
+				</ul>
+			</div>
+			<!-- footer -->
+		</div>											
+		<div data-role="page" data-add-back-btn="true" id="ringLonger">
+			<div data-role="header" data-theme="a" data-id="header" data-position="fixed">
+				<h1 class="header">SOS</h1>
+				<a href="#begin" class="ui-btn-right" data-icon="home" data-iconpos="notext" data-direction="reverse">Home</a> 
+			</div>
+			
+			<div data-role="content">
+				<h1 class="pageHeader">The Ring</h1>
+				<p>For how long did you wear the ring?</p>
+				<ul data-role="listview" data-inset="true">
+				    <li>
+				    	<a href="#ringLonger21to27">
+				    		<h2>From 21 to 27 days</h2>
+				    	</a>
+				    </li>
+				    <li>
+				    	<a href="#ringLonger28to35">
+				    		<h2>From 28 to 35 days</h2>
+				    	</a>
+				    </li>
+				    <li>
+				    	<a href="#ringLongerMoreThan35">
+				    		<h2>For more than 35 days</h2>
+				    	</a>
+				    </li>
+				</ul>
+			</div>
+			<!-- footer -->
+		</div>							
+		<div data-role="page" data-add-back-btn="true" id="ringLonger21to27">
+			<div data-role="header" data-theme="a" data-id="header" data-position="fixed">
+				<h1 class="header">SOS</h1>
+				<a href="#begin" class="ui-btn-right" data-icon="home" data-iconpos="notext" data-direction="reverse">Home</a> 
+			</div>
+			
+			<div data-role="content">
+				<h1 class="pageHeader">The Ring</h1>
+				<p class="callout">From 21 to 27 days</p>
+				<ul data-role="listview" data-inset="true" class="steps">
+					<li data-role="list-divider">Step 1</li>
+					<li>
+						<p>Remove the ring as soon as possible.</p>
+						<p>Your contraception should still be effective</p>
+						<p>As this is your scheduled week without a ring, this will not affect your contraception cycle.</p>
+					</li>
+					<li data-role="list-divider">Step 2</li>
+					<li>
+						<p>Begin a NEW contraceptive cycle with a NEW ring as scheduled.</p>
+					</li>
+					<li data-role="list-divider">Note</li>
+					<li class="note">
+						<p>The ring is most effective when a NEW ring is inserted every 4 weeks, on a regular schedule (with one ring-free week). If you have trouble remembering to consistently change your ring, perhaps you should consider a different method of contraception options that match your needs and lifestyle.</p>
+					</li>
+				</ul>
+			</div>
+			<!-- footer -->
+		</div>										
+		<div data-role="page" data-add-back-btn="true" id="ringLonger28to35">
+			<div data-role="header" data-theme="a" data-id="header" data-position="fixed">
+				<h1 class="header">SOS</h1>
+				<a href="#begin" class="ui-btn-right" data-icon="home" data-iconpos="notext" data-direction="reverse">Home</a> 
+			</div>
+			
+			<div data-role="content">
+				<h1 class="pageHeader">The Ring</h1>
+				<p class="callout">From 28 to 35 days</p>
+				<ul data-role="listview" data-inset="true" class="steps">
+					<li data-role="list-divider">Step 1</li>
+					<li>
+						<p>Begin a NEW contraceptive cycle with a NEW ring immediately.</p>
+						<p>Do not go a week without a ring as normally scheduled.</p>
+						<p>Keep the ring in until the scheduled ring removal day.</p>
+					</li>
+					<li data-role="list-divider">Note</li>
+					<li class="note">
+						<p>The ring is most effective when a NEW ring is inserted every 4 weeks, on a regular schedule (with one ring-free week). If you have trouble remembering to consistently change your ring, perhaps you should consider a different method of contraception options that match your needs and lifestyle.</p>
+					</li>
+				</ul>
+			</div>
+			<!-- footer -->
+		</div>							
+		<div data-role="page" data-add-back-btn="true" id="ringLongerMoreThan35">
+			<div data-role="header" data-theme="a" data-id="header" data-position="fixed">
+				<h1 class="header">SOS</h1>
+				<a href="#begin" class="ui-btn-right" data-icon="home" data-iconpos="notext" data-direction="reverse">Home</a> 
+			</div>
+			
+			<div data-role="content">
+				<h1 class="pageHeader">The Ring</h1>
+				<p class="callout">For more than 35 days</p>
+				<ul data-role="listview" data-inset="true" class="steps">
+					<li data-role="list-divider">Step 1</li>
+					<li>
+						<p>Begin a NEW contraceptive cycle with a NEW ring immediately.</p>
+					</li>
+					<li data-role="list-divider">Step 2</li>
+					<li>
+						<p>If you had unprotected sexual intercourse in the last 5 days and are concerned about an unplanned pregnancy, emergency contraception ("the morning after pill" or IUD) is recommended and should be used as soon as possible.</p>
+						<p>If you wish to discuss your emergency contraception options, consult your local pharmacist, nurse, or physician.</p>
+						<p>Emergency contraception is effective for up to 5 days after unprotected sexual intercourse.</p>
+					</li>
+					<li data-role="list-divider">Step 3</li>
+					<li>
+						<p>You should also use back-up contraception, such as condoms, for the next 7 days.</p>
+					</li>
+					<li data-role="list-divider">Note</li>
+					<li class="note">
+						<p>The ring is most effective when a NEW ring is inserted every 4 weeks, on a regular schedule (with one ring-free week). If you have trouble remembering to consistently change your ring, perhaps you should consider a different method of contraception options that match your needs and lifestyle.</p>
+					</li>
+				</ul>
+			</div>
+			<!-- footer -->
+		</div>
+		<!-- / Ring -->
+		<!-- Shot -->
+		<div data-role="page" data-add-back-btn="true" id="shot">
+			<div data-role="header" data-theme="a" data-id="header" data-position="fixed">
+				<h1 class="header">SOS</h1>
+				<a href="#begin" class="ui-btn-right" data-icon="home" data-iconpos="notext" data-direction="reverse">Home</a> 
+			</div>
+			
+			<div data-role="content">
+				<h1 class="pageHeader">The Shot</h1>
+				<p>When was your last injection?</p>
+				<ul data-role="listview" data-inset="true">
+				    <li>
+				    	<a href="#shotBetween13and14">
+				    		<h2>Between 13 and 14 weeks ago</h2>
+				    	</a>
+				    </li>
+				    <li>
+				    	<a href="#shotMoreThan14">
+				    		<h2>More than 14 weeks ago</h2>
+				    	</a>
+				    </li>
+				</ul>
+			</div>
+			<!-- footer -->
+		</div>		
+		<div data-role="page" data-add-back-btn="true" id="shotBetween13and14">
+			<div data-role="header" data-theme="a" data-id="header" data-position="fixed">
+				<h1 class="header">SOS</h1>
+				<a href="#begin" class="ui-btn-right" data-icon="home" data-iconpos="notext" data-direction="reverse">Home</a> 
+			</div>
+			
+			<div data-role="content">
+				<h1 class="pageHeader">The Shot</h1>
+				<p class="callout">Your last injection should still be effective</p>
+				<ul data-role="listview" data-inset="true" class="steps">
+					<li data-role="list-divider">Step 1</li>
+					<li>
+						<p>Contact your health-care professional to have your next injection as soon as possible (before 14 weeks have passed)</p>
+					</li>
+					<li data-role="list-divider">Note</li>
+					<li class="note">
+						<p>The ring is most effective when a NEW ring is inserted every 4 weeks, on a regular schedule (with one ring-free week). If you have trouble remembering to consistently change your ring, perhaps you should consider a different method of contraception options that match your needs and lifestyle.</p>
+					</li>
+				</ul>
+			</div>
+			<!-- footer -->
+		</div>	
+		<div data-role="page" data-add-back-btn="true" id="shotMoreThan14">
+			<div data-role="header" data-theme="a" data-id="header" data-position="fixed">
+				<h1 class="header">SOS</h1>
+				<a href="#begin" class="ui-btn-right" data-icon="home" data-iconpos="notext" data-direction="reverse">Home</a> 
+			</div>
+			
+			<div data-role="content">
+				<h1 class="pageHeader">The Shot</h1>
+				<p>Have you had unprotected sex in the past 14 days?</p>
+				<ul data-role="listview" data-inset="true">
+				    <li>
+				    	<a href="#shotMoreThan14Yes">
+				    		<h2>Yes</h2>
+				    	</a>
+				    </li>
+				    <li>
+				    	<a href="#shotMoreThan14No">
+				    		<h2>No</h2>
+				    	</a>
+				    </li>
+				</ul>
+			</div>
+			<!-- footer -->
+		</div>
+		<div data-role="page" data-add-back-btn="true" id="shotMoreThan14Yes">
+			<div data-role="header" data-theme="a" data-id="header" data-position="fixed">
+				<h1 class="header">SOS</h1>
+				<a href="#begin" class="ui-btn-right" data-icon="home" data-iconpos="notext" data-direction="reverse">Home</a> 
+			</div>
+			
+			<div data-role="content">
+				<h1 class="pageHeader">The Shot</h1>
+				<p>Have you had unprotected sex in the past 5 days?</p>
+				<ul data-role="listview" data-inset="true">
+				    <li>
+				    	<a href="#shotMoreThan14YesYes">
+				    		<h2>Yes</h2>
+				    	</a>
+				    </li>
+				    <li>
+				    	<a href="#shotMoreThan14YesNo">
+				    		<h2>No</h2>
+				    	</a>
+				    </li>
+				</ul>
+			</div>
+			<!-- footer -->
+		</div>
+		<div data-role="page" data-add-back-btn="true" id="shotMoreThan14YesYes">
+			<div data-role="header" data-theme="a" data-id="header" data-position="fixed">
+				<h1 class="header">SOS</h1>
+				<a href="#begin" class="ui-btn-right" data-icon="home" data-iconpos="notext" data-direction="reverse">Home</a> 
+			</div>
+			
+			<div data-role="content">
+				<h1 class="pageHeader">The Shot</h1>
+				<p class="callout">You've had unprotected sex in the past 5 days. Contact your health-care professional. Take a pregnancy test.</p>
+				<h2 class="pageSubHeader">If the pregnancy test is negative:</h2>
+				<ul data-role="listview" data-inset="true" class="steps">
+					<li data-role="list-divider">Step 1</li>
+					<li>
+						<p>If you had unprotected sexual intercourse in the last 5 days and are concerned about an unplanned pregnancy, emergency contraception ("the morning after pill" or IUD) is recommended and should be used as soon as possible.</p>
+						<p>If you wish to discuss your emergency contraception options, consult your local pharmacist, nurse, or physician.</p>
+						<p>Emergency contraception is effective for up to 5 days after unprotected sexual intercourse.</p>
+					</li>
+					<li data-role="list-divider">Step 2</li>
+					<li>
+						<p>You should have your next injection as soon as possible.</p>
+					</li>
+					<li data-role="list-divider">Step 3</li>
+					<li>
+						<p>You should use back-up contraception such as condoms, for the next 7 days after your injection.</p>
+					</li>
+					<li data-role="list-divider">Step 4</li>
+					<li>
+						<p>You should see your health-care professional and take another pregnancy test in 3 weeks.</p>	
+					</li>
+					<li data-role="list-divider">Note</li>
+					<li class="note">
+						<p>Note: The injection is most effective when it is administered every 12 to 13 weeks on a regular schedule.</p>
+						<p>If you cannot see a health-care professional every 12 to 13 weeks for your injection, perhaps you should consider a different method of contraception.</p>
+					</li>
+				</ul>
+				<h2 class="pageSubHeader">If the pregnancy test is positive and confirms that you are pregnant:</h2>
+				<ul data-role="listview" data-inset="true" class="steps">
+					<li data-role="list-divider">Step 1</li>
+					<li>
+						<p>It is important to speak with a health-care professional or contact a medical clinic as soon as possible, to discuss whether you plan to continue the pregnancy or not.</p>
+					</li>
+				</ul>
+			</div>
+			<!-- footer -->
+		</div>
+		<div data-role="page" data-add-back-btn="true" id="shotMoreThan14YesNo">
+			<div data-role="header" data-theme="a" data-id="header" data-position="fixed">
+				<h1 class="header">SOS</h1>
+				<a href="#begin" class="ui-btn-right" data-icon="home" data-iconpos="notext" data-direction="reverse">Home</a> 
+			</div>
+			
+			<div data-role="content">
+				<h1 class="pageHeader">The Shot</h1>
+				<p class="callout">You have not had unprotected sex in the past 5 days. Contact your health-care professional. Take a pregnancy test.</p>
+				<h2 class="pageSubHeader">If the pregnancy test is negative:</h2>
+				<ul data-role="listview" data-inset="true" class="steps">
+					<li data-role="list-divider">Step 1</li>
+					<li>
+						<p>You should have your next injection as soon as possible.</p>
+					</li>
+					<li data-role="list-divider">Step 2</li>
+					<li>
+						<p>You should use back-up contraception such as condoms, for the next 7 days after your injection.</p>
+					</li>
+					<li data-role="list-divider">Step 3</li>
+					<li>
+						<p>You should see your health-care professional and take another pregnancy test in 3 weeks.</p>	
+					</li>
+					<li data-role="list-divider">Note</li>
+					<li class="note">
+						<p>Note: The injection is most effective when it is administered every 12 to 13 weeks on a regular schedule.</p>
+						<p>If you cannot see a health-care professional every 12 to 13 weeks for your injection, perhaps you should consider a different method of contraception.</p>
+					</li>
+				</ul>
+				<h2 class="pageSubHeader">If the pregnancy test is positive and confirms that you are pregnant:</h2>				
+				<ul data-role="listview" data-inset="true" class="steps">
+					<li data-role="list-divider">Step 1</li>
+					<li>
+						<p>It is important to speak with a health-care professional or contact a medical clinic as soon as possible, to discuss whether you plan to continue the pregnancy or not.</p>
+					</li>
+				</ul>
+			</div>
+			<!-- footer -->
+		</div>
+		<div data-role="page" data-add-back-btn="true" id="shotMoreThan14No">
+			<div data-role="header" data-theme="a" data-id="header" data-position="fixed">
+				<h1 class="header">SOS</h1>
+				<a href="#begin" class="ui-btn-right" data-icon="home" data-iconpos="notext" data-direction="reverse">Home</a> 
+			</div>
+			<div data-role="content">
+				<h1 class="pageHeader">The Shot</h1>
+				<p class="callout">You have not had unprotected sex in the past 14 days. Contact your health-care professional. Take a pregnancy test.</p>
+				<h2 class="pageSubHeader">If the pregnancy test is negative:</h2>
+				<ul data-role="listview" data-inset="true" class="steps">
+					<li data-role="list-divider">Step 1</li>
+					<li>
+						<p>You should have your next injection as soon as possible.</p>
+					</li>					
+					<li data-role="list-divider">Step 2</li>
+					<li>
+						<p>You should use also back-up contraception such as condoms, for the next 7 days after your injection.</p>
+					</li>
+					<li data-role="list-divider">Note</li>
+					<li class="note">
+						<p>Note: The injection is most effective when it is administered every 12 to 13 weeks on a regular schedule.</p>
+						<p>If you cannot see a health-care professional every 12 to 13 weeks for your injection, perhaps you should consider a different method of contraception.</p>
+					</li>
+				</ul>
+				<h2 class="pageSubHeader">If the pregnancy test is positive and confirms that you are pregnant:</h2>				
+				<ul data-role="listview" data-inset="true" class="steps">
+					<li data-role="list-divider">Step 1</li>
+					<li>
+						<p>It is important to speak with a health-care professional or contact a medical clinic as soon as possible, to discuss whether you plan to continue the pregnancy or not.</p>
+					</li>
+				</ul>
+			</div>
+			<!-- footer -->
+		</div>
+	</body>
+</html>
